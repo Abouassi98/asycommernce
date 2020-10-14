@@ -68,13 +68,13 @@ class _AuthPageState extends State<AuthPage> {
         : 'Error Registration $errorMessage');
   }
 
-  Future _auth() async {
+  Future<void> _auth() async {
     setState(() {
       isSubmiting = true;
     });
     try {
       _login
-          ? await Provider.of<Auth>(context, listen: false).auth(
+          ?  Provider.of<Auth>(context, listen: false).auth(
               email: email,
               login: true,
               password: password,
